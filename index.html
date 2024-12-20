@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- add icon link -->
+    <link rel="shortcut icon" href="cloudy.png" type="image/x-icon">
+    <!-- tailwind css link-->
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="input.css">
+</head>
+
+<!-- Body Image Section -->
+<body class="bg-MY 
+bg-center bg-cover bg-no-repeat min-h-screen flex flex-col gap-5 items-center p-10">
+
+ <!-- Header Section -->
+ <header class="w-fit flex items-center">
+    <h1 class="text-white font-extrabold text-5xl">Weather Forecast</h1>
+    <img src="cloudy.png" alt="not available" class="w-14 h-14" srcset=""/>
+  </header>
+  <p class="text-lg text-gray-300 mb-5">
+    Your daily weather updates here...
+  </p>
+
+  <!-- Search Section -->
+  <section
+    class="flex flex-col sm:flex-row items-center mb-6 w-full max-w-lg relative"
+  >
+    <input type="text" placeholder="Enter city..." class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-lg ml-3" 
+      id="city-input"/>    
+    
+      <button class="mt-4 sm:mt-0 sm:ml-4 px-4 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-400 shadow-lg"
+          id="search-button"> Search </button>
+    
+
+    <!-- Recently searched cities -->
+    <div
+      id="recent-searches"
+      class="absolute left-0 right-0 mx-auto bg-white shadow-lg rounded-lg p-2 mt-1 hidden w-48 z-10"
+    >
+      <h4 class="font-bold text-gray-800 mb-2">Recently Searched</h4>
+      <ul id="recent-search-list">
+        <!-- Recent cities will be added here dynamically -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- Weather Display Section -->
+  <section class="bg-white rounded-lg shadow-lg p-6 mb-8 w-full max-w-xl text-center">
+    
+    <h2 id="city-name" class="text-4xl font-semibold text-gray-800 mb-4"> City Name</h2>
+    <div class="flex justify-center items-center mt-2">
+      <img id="weather-icon" src="https://cdn-icons-png.flaticon.com/512/3222/3222691.png" alt="Sunny Weather Icon" class="w-16 h-16"/>
+      <p id="weather-description" class="text-2xl text-gray-700 ml-4">
+        Sunny, 28°C
+      </p>
+    </div>
+    
+    <div class="flex justify-around mt-4 mb-3">
+      <div class="flex flex-col items-center">
+        <p class="text-gray-700">Wind Speed</p>
+        <p id="wind-speed" class="text-3xl font-bold">20 km/h</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="text-gray-700">Humidity</p>
+        <p id="humidity" class="text-3xl font-bold">90%</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="text-gray-700">Pressure</p>
+        <p id="pressure" class="text-3xl font-bold">2103 hPa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-day Forecast Section -->
+  <section class="w-full max-w-xl">
+    <h3 class="text-5xl text-white font-extrabold mb-4 text-center ">5-Day Forecast</h3><br>
+    <div
+      id="forecast-container"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4"
+    ></div>
+  </section>
+  
+<script src="app.js"></script>
+    
+</body>
+</html>
